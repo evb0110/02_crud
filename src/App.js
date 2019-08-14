@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import Card from './components/Card';
+
+const data = [
+  {
+    id: 1,
+    content: 'Какая-то фигня',
+    created: '5 мин',
+  },
+  {
+    id: 2,
+    content: 'Очень важный текст',
+    created: '10 мин',
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {data.map(post => (
+        <Card post={post} />
+      ))}
     </div>
   );
 }
